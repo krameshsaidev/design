@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 1</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href='css/sidenavbar.css' rel='stylesheet'>
+    <link href='Kendo/styles/kendo.bootstrap.min.css' rel='stylesheet'>
+    <link href='Kendo/styles/kendo.common.min.css' rel='stylesheet'>
+    <link href='Kendo/styles/kendo.default.min.css' rel='stylesheet'>
+    <link href='Kendo/styles/kendo.default.mobile.min.css' rel='stylesheet'>
+    <style>
+        body {
+        font-family:sans-serif;
+        font-size:12px;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .k-card {
+            /*width: 285px;*/
+            /*margin: 2%;*/
+            /*  margin-left: 15px;
+            margin-right: 15px;*/
+            margin: 15px;
+        }
+
+        .k-card-footer {
+            text-align: center;
+        }
+
+        .k-card-action > .k-button {
+            width: 100%;
+        }
+
+        .k-chart {
+            height: 200px;
+        }
+    </style>
+    <style>
+        #panelbar {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .teamMate h2 {
+            font-size: 1.4em;
+            font-weight: normal;
+            margin-bottom: 0px;
+        }
+
+        .teamMate p {
+            margin: 0;
+        }
+
+        .teamMate img {
+            display: inline-block;
+            margin: 5px 15px 5px 5px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .details {
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+            <i class="fas fa-book-medical"></i>
+            <span class="logo_name">AK Eden</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class="fas fa-home" style="color:darkgray"></i>
+                    <span class="link_name">Home</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Home</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="link_name">Reports</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Reports</a></li>
+                    <li><a href="#">Reports 1</a></li>
+                    <li><a href="#">Reports 2</a></li>
+                    <li><a href="#">Reports 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class="fas fa-file-invoice"></i>
+                        <span class="link_name">Manage Claims</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Manage Claims</a></li>
+                    <li><a href="#">Claims 1</a></li>
+                    <li><a href="#">Claims 2</a></li>
+                    <li><a href="#">Claims 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-money-bill"></i>
+                    <span class="link_name">Manage Payments</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Manage Payments</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-user-injured"></i>
+                    <span class="link_name">Manage Patients</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Manage Patients</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class="fas fa-book-open"></i>
+                        <span class="link_name">Resources</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Resources</a></li>
+                    <li><a href="#">Resources 1</a></li>
+                    <li><a href="#">Resources 2</a></li>
+                    <li><a href="#">Resources 3</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <img src="images/admin.png" alt="profileImg">
+                    </div>
+                    <div class="name-job">
+                        <div class="profile_name">Hi User,</div>
+                        <div class="job">Admin</div>
+                    </div>
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class="fas fa-bars" style="font-size:22px;margin-left:10px"></i>
+        </div>
+        <div class="cards-container" style="justify-content:unset">
+            <div class="k-card" style="width:1000px">
+                <!--<div id="chart1"></div>-->
+                <div class="cards-container" style="justify-content:unset">
+                    <div class="k-card" style="width: 460px">
+                        <div id="chart1"></div>
+                    </div>
+                    <div class="k-card" style="width: 460px">
+                        <div id="chart2"></div>
+                    </div>
+                    <div class="k-card" style="width: 460px">
+                        <div id="chart3"></div>
+                    </div>
+                    <div class="k-card" style="width: 460px">
+                        <div id="chart4"></div>
+                    </div>
+                    <div class="k-card" style="width: 460px">
+                        <div id="chart5"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="k-card" style="width:20%;height:100%">
+                <div id="example">
+                    <ul id="panelbar">
+                        <li class="k-state-active">
+                            <span class="k-link k-state-selected">Daily Tasks</span>
+                            <div style="padding: 10px;">
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Message Center</h2>
+                                        <a>125 New Messages</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Send/Receive</h2>
+                                        <a>Send/Receive Files</a>
+                                        <a>Confirm File Delivery</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Work Rejected Claims</h2>
+                                        <a>Primary Claim Rejection</a>
+                                        <a>Secondary Claim Rejection</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>View Insurance Payments</h2>
+                                        <a>New Remittances</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Check Patient Eligibility</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>View Insurance Payments</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Accept Patient Payments</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>NPI Look-up</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Customize your workflow</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            Weekly Tasks
+                            <div style="padding: 10px;">
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <!--<i class="fa-solid fa-envelope"></i>-->
+                                        <h2>Message Center</h2>
+                                        <a>125 New Messages</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Send/Receive</h2>
+                                        <a>Send/Receive Files</a>
+                                        <a>Confirm File Delivery</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Work Rejected Claims</h2>
+                                        <a>Primary Claim Rejection</a>
+                                        <a>Secondary Claim Rejection</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>View Insurance Payments</h2>
+                                        <a>New Remittances</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Check Patient Eligibility</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>View Insurance Payments</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Accept Patient Payments</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>NPI Look-up</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Customize your workflow</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                        <li>
+                            Monthly Tasks
+                            <div style="padding: 10px;">
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Message Center</h2>
+                                        <a>125 New Messages</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Send/Receive</h2>
+                                        <a>Send/Receive Files</a>
+                                        <a>Confirm File Delivery</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Work Rejected Claims</h2>
+                                        <a>Primary Claim Rejection</a>
+                                        <a>Secondary Claim Rejection</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>View Insurance Payments</h2>
+                                        <a>New Remittances</a>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Check Patient Eligibility</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>View Insurance Payments</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Accept Patient Payments</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>NPI Look-up</h2>
+                                    </div>
+                                </div>
+                                <div class="teamMate">
+                                    <div class="details">
+                                        <h2>Customize your workflow</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+            </div>
+
+            
+        </div>
+        <!--<div class="cards-container" style="justify-content:unset">
+            <div class="k-card" style="width:400px">
+                <div id="chart2"></div>
+            </div>
+            <div class="k-card" style="width:400px">
+                <div id="chart3"></div>
+            </div>
+            <div class="k-card" style="width:400px">
+                <div id="chart4"></div>
+            </div>
+        </div>-->
+    </section>
+    <script src="Kendo/js/jquery.min.js"></script>
+    <script src="Kendo/js/kendo.all.min.js"></script>
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".fa-bars");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+    </script>
+    <script>
+        function createChart() {
+            $("#chart1,#chart2,#chart3,#chart4,#chart5").kendoChart({
+                title: {
+                    text: "A digital signal"
+                },
+                legend: {
+                    visible: false
+                },
+                series: [{
+                    type: "area",
+                    data: [20, 1, 18, 3, 15, 5, 10, 6, 9, 6, 10, 5, 13, 3, 16, 1, 19, 1, 20, 2, 18, 5, 12, 7, 10, 8],
+                    line: {
+                        style: "smooth"
+                    }
+                }],
+                categoryAxis: {
+                    title: {
+                        text: "time"
+                    },
+                    majorGridLines: {
+                        visible: false
+                    },
+                    majorTicks: {
+                        visible: false
+                    }
+                },
+                valueAxis: {
+                    max: 22,
+                    title: {
+                        text: "voltage"
+                    },
+                    majorGridLines: {
+                        visible: false
+                    },
+                    visible: false
+                }
+            });
+        }
+
+        $(document).ready(createChart);
+        $(document).bind("kendo:skinChange", createChart);
+        $(document).ready(function () {
+            $("#panelbar").kendoPanelBar({
+                expandMode: "single"
+            });
+        });
+    </script>
+
+</body>
+</html>
