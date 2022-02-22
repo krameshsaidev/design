@@ -1,0 +1,595 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Claims Check Eligibility</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <style>
+        #printsection i, .input-prefix {
+            font-size: 22px;
+            padding-left: 5px;
+        }
+
+            #printsection i:last-child {
+                padding-right: 15px;
+            }
+
+        .md-form {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .divsection, .row {
+            /*background-color: lightgrey !important;*/
+            margin-right: 0 !important;
+        }
+
+        .md-form.md-bg input[type="text"], .md-form.md-bg input[type="text"]:focus {
+            background-color: #fff;
+        }
+
+        .bc-icons-2 .breadcrumb-item + .breadcrumb-item::before {
+            content: none;
+        }
+
+        .bc-icons-2 .breadcrumb-item.active {
+            color: #455a64;
+        }
+
+        .form-inline .form-control {
+            margin-left: 5px;
+        }
+
+        #mainlayout, #mainlayout a {
+            font-family: Slack-Lato, appleLogo, sans-serif;
+            font-size: 12.75px;
+            color: #006f9d;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu"
+             class="collapse d-lg-block sidebar collapse">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-2" id="menulist">
+
+
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar"
+             class="navbar navbar-expand-lg navbar-light text-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#sidebarMenu"
+                        aria-controls="sidebarMenu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand text-white" href="#">
+                    Akr Eden
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Patient Access</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Claims &<br />Tracking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rejections &<br />Denials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Payments &<br />Billing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reporting &<br />Metrics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools &<br />Setup</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <img src="images/doctor.png"
+                                 class="rounded-circle"
+                                 height="22"
+                                 alt=""
+                                 loading="lazy" />
+                            Hi User
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+    <!--Main layout-->
+    <main style="margin-top: 80px">
+        <div class="container-fluid" id="mainlayout">
+            <div class="row" style="margin-top:-25px;float:right" id="printsection">
+                <i class="fas fa-question-circle"></i>
+                <i class="fas fa-print"></i>
+            </div>
+            <div class="row divsection mt-4">
+                <div class="col-md-6">Advanced Search</div>
+                <div class="col-md-6" align="right"><u>Go to Simple Search</u></div>
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="ch_trace_id">CH TRACE ID :</label>
+                    <input type="text" class="form-control" id="ch_trace_id">
+                </div>
+                <div class="form-group">
+                    <label for="claim_type" class="ml-2">Claim Type :</label>
+                    <select class="form-control" id="claim_type">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="processed_as" class="ml-2">Processed As:</label>
+                    <select class="form-control" id="processed_as">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="charge_amount" class="ml-2">Charge Amount :</label>
+                    <select class="form-control" id="charge_amount">
+                        <option>All</option>
+                    </select>
+                    <input type="text" class="form-control" />
+                </div>
+            </form>
+            <form class="form-inline mt-1">
+                <div class="form-group">
+                    <label for="ch_reject_msg">CH Reject Message:</label>
+                    <input type="text" class="form-control" id="ch_reject_msg">
+                </div>
+                <div class="form-group">
+                    <label for="payer_reject_msg" class="ml-2">Payer Reject Message:</label>
+                    <input type="text" class="form-control" id="payer_reject_msg">
+                </div>
+                <div class="col-4">
+                    <label for="error_loop" class="mr-5">CH Reject Message by ANSI Loop/Segment:</label>
+                    <select class="form-control" id="error_loop">
+                        <option>No Error Loop</option>
+                    </select>
+                    <select class="form-control" id="error_segment">
+                        <option>No Error Segment</option>
+                    </select>
+                </div>
+            </form>
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion mr-3 ml-1 mt-2" id="accordion1" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingOne1">
+                        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1" aria-expanded="true"
+                           aria-controls="collapseOne1">
+                            <h5 class="mb-0">
+                                Submiter - Provider - Received Identification <i class="fas fa-angle-down rotate-icon float-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+                         data-parent="#accordion1">
+                        <div class="card-body">
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="account">Account : </label>
+                                    <label id="account">95625408</label>
+                                </div>
+                                <div class="col-4">
+                                    <label for="payer_search" class="mr-5">Payer Name or ID:<input type="checkbox" /> My List <i class="fas fa-question-circle"></i> (<u>Payer List</u>)</label>
+                                    <input type="text" id="payer_search" class="form-control ml-5" placeholder="Search and select payer" />
+                                </div>
+                                <div class="col-2">
+                                    <label for="other_payers" class="mr-5">Other Payers:</label>
+                                    <select class="form-control ml-4" id="other_payers">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="billing_provider_tax_id">Billing Provider Tax ID :</label>
+                                    <input type="text" class="form-control" id="billing_provider_tax_id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billing_provider_npi" class="ml-2">Billing Provider NPI :</label>
+                                    <input type="text" class="form-control" id="billing_provider_npi">
+                                </div>
+                                <div class="form-group">
+                                    <label for="custom_id" class="ml-2">Custom ID:</label>
+                                    <input type="text" class="form-control" id="custom_id">
+                                </div>
+                            </form>
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="rendering_prov_id">Rendering Prov ID :</label>
+                                    <input type="text" class="form-control" id="rendering_prov_id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rendering_prov_npi" class="ml-2">Rendering Prov NPI :</label>
+                                    <input type="text" class="form-control" id="rendering_prov_npi">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+            </div>
+            <!-- Accordion wrapper -->
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion mr-3 ml-1 mt-2" id="accordion2" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingOne2">
+                        <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2" aria-expanded="true"
+                           aria-controls="collapseOne2">
+                            <h5 class="mb-0">
+                                Processing Status Identification <i class="fas fa-angle-down rotate-icon float-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne2" class="collapse show" role="tabpanel" aria-labelledby="headingOne2"
+                         data-parent="#accordion2">
+                        <div class="card-body">
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="ch_claim_processing_status">Ch Claim Processing Status : </label>
+                                    <select class="form-control" id="ch_claim_processing_status">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ch_claim_processing_date_range" class="ml-2">Ch Claim Processing Date Range : </label>
+                                    <select class="form-control" id="ch_claim_processing_date_previous">
+                                        <option>Previous</option>
+                                    </select>
+                                    <select class="form-control" id="ch_claim_processing_date_date">
+                                        <option>3</option>
+                                    </select>
+                                    <select class="form-control" id="ch_claim_processing_date_day">
+                                        <option>Day(s)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cci_status" class="ml-2">CCI Status:</label>
+                                    <select class="form-control" id="cci_status">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="payer_processing_status">Payer Processing Status : </label>
+                                    <select class="form-control" id="payer_processing_status">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payer_processing_date_range" class="ml-2">Payer Processing Date Range : </label>
+                                    <select class="form-control" id="payer_processing_date_previous">
+                                        <option>Select</option>
+                                    </select>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mnc_status" class="ml-2">MNC Status:</label>
+                                    <select class="form-control" id="mnc_status">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="remit_status">Remit Status : </label>
+                                    <select class="form-control" id="remit_status">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="era_processing_date_previous" class="ml-2">ERA Processing Date Range : </label>
+                                    <select class="form-control" id="era_processing_date_previous">
+                                        <option>Select</option>
+                                    </select>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="denial_prevention_status" class="ml-2">Denial Prevention Status:</label>
+                                    <select class="form-control" id="denial_prevention_status">
+                                        <option>All</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="auto_eligibility_processing_status">Auto Eligibility Processing Status : </label>
+                                    <select class="form-control" id="auto_eligibility_processing_status">
+                                        <option>Inactive, Valid'n Msgs</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="auto_elig_processing_date_range" class="ml-2">Auto Elig Processing Date Range : </label>
+                                    <select class="form-control" id="auto_elig_processing_date_previous">
+                                        <option>Select</option>
+                                    </select>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="denial_prevention_category" class="ml-2">Denial Prevention Category:</label>
+                                    <select class="form-control" id="denial_prevention_category">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+            </div>
+            <!-- Accordion wrapper -->
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion mr-3 ml-1 mt-2" id="accordion3" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingOne3">
+                        <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3" aria-expanded="true"
+                           aria-controls="collapseOne3">
+                            <h5 class="mb-0">
+                                Subscriber - Patient Identification <i class="fas fa-angle-down rotate-icon float-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne3" class="collapse show" role="tabpanel" aria-labelledby="headingOne3"
+                         data-parent="#accordion3">
+                        <div class="card-body">
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="insured_id">Insured ID :</label>
+                                    <input type="text" class="form-control" id="insured_id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient_account" class="ml-2">Patient Account # :</label>
+                                    <input type="text" class="form-control" id="patient_account">
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient_last_name" class="ml-2">Patient Last name:</label>
+                                    <input type="text" class="form-control" id="patient_last_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="patient_first_name" class="ml-2">Patient First name:</label>
+                                    <input type="text" class="form-control" id="patient_first_name">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+            </div>
+            <!-- Accordion wrapper -->
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion mr-3 ml-1 mt-2" id="accordion4" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingOne4">
+                        <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4" aria-expanded="true"
+                           aria-controls="collapseOne4">
+                            <h5 class="mb-0">
+                                Service Identification <i class="fas fa-angle-down rotate-icon float-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne4" class="collapse show" role="tabpanel" aria-labelledby="headingOne4"
+                         data-parent="#accordion4">
+                        <div class="card-body">
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="date_of_service">Date of Service :</label>
+                                    <select class="form-control" id="date_of_service">
+                                        <option>Select</option>
+                                    </select>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="diagnosis_code" class="ml-2">Diagnosis Code :</label>
+                                    <input type="text" class="form-control" id="diagnosis_code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="procedure_code" class="ml-2">Procedure Code :</label>
+                                    <input type="text" class="form-control" id="procedure_code">
+                                </div>
+                                <div class="form-group">
+                                    <label for="proc_code_modifier" class="ml-2">Proc Code Modifier :</label>
+                                    <input type="text" class="form-control" id="proc_code_modifier">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+            </div>
+            <!-- Accordion wrapper -->
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion mr-3 ml-1" id="accordion5" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingOne5">
+                        <a data-toggle="collapse" data-parent="#accordion5" href="#collapseOne5" aria-expanded="true"
+                           aria-controls="collapseOne5">
+                            <h5 class="mb-0">
+                                Workflow Identification <i class="fas fa-angle-down rotate-icon float-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseOne5" class="collapse show" role="tabpanel" aria-labelledby="headingOne5"
+                         data-parent="#accordion5">
+                        <div class="card-body">
+                            <form class="form-inline mt-1">
+                                <div class="form-group">
+                                    <label for="claim_work_status">Claim Work Status :</label>
+                                    <select class="form-control" id="claim_work_status">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trouble_ticket_status" class="ml-2">Trouble Ticket Status:</label>
+                                    <select class="form-control" id="trouble_ticket_status">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="assignee" class="ml-2">Assignee :</label>
+                                    <select class="form-control" id="assignee">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="claim_origin" class="ml-2">Claim Origin :</label>
+                                    <select class="form-control" id="claim_origin">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group mt-2">
+                                    <label for="last_client_status_date">Last Client Status Date:</label>
+                                    <select class="form-control" id="last_client_status_date">
+                                        <option>Select</option>
+                                    </select>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+            </div>
+            <!-- Accordion wrapper -->
+            <div class="row divsection mt-2 mr-2" style="float:right">
+                <form class="form-inline ml-4">
+                    <div class="form-group">
+                        <label for="claims_per_page">Claims Per Page :</label>
+                        <select class="form-control" id="claims_per_page">
+                            <option>10  </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="claims_per_page">Sort By :</label>
+                        <select class="form-control" id="claims_per_page">
+                            <option>Date Processed  </option>
+                        </select>
+                        <select class="form-control" id="claims_per_page">
+                            <option>Assending  </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-info">Search</button>
+                        <button class="btn btn-dark">Clear Fields</button>
+                        <button class="btn btn-dark">Save To My Tasks</button>    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/sidenav.js"></script>
+
+    <script>
+        //function toggleIcon(e) {
+        //    $(e.target)
+        //        .prev('.panel-heading')
+        //        .find(".more-less")
+        //        .toggleClass('glyphicon-plus glyphicon-minus');
+        //}
+        //$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+        //$('.panel-group').on('shown.bs.collapse', toggleIcon);
+        //$('#accordion .collapse').collapse('show');
+    </script>
+</body>
+</html>

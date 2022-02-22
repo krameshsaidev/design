@@ -9,84 +9,158 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .loginform {
-            margin-top: 100px;
+            /*margin-top: 100px;*/
+            position: absolute;
+            right: 100px;
+            top: 100px;
+            height: 280px;
+            width: 500px;
+            background-color: #5b2c81 !important;
+            border-style: solid;
+            border-color: #e0dfe1!important;
+            border-width: 1px 0px 1px 1px;
+            border-radius: 3px 0px 0px 3px;
+            color: #ffffff;
         }
 
             .loginform .sideblock, .signin {
                 background-color: #7d3f98 !important;
+                /*background-color:var(--hero-purple)!important;*/
             }
 
         .md-form .prefix.active {
             color: #7d3f98;
         }
+
         .signin {
-        border-radius:50px;
+            border-radius: 50px;
         }
+
         body {
-           
             background-color: #f8fafb;
+            font-family: Slack-Lato, appleLogo, sans-serif;
+            line-height:1.15;
+        }
+        #loginsection {
+        color:black;
+        }
+        .col-form-label {        
+        padding-top:0;
+
+        }
+        /*input:focus {
+            outline: none !important;
+            border: 1px solid blue!important;*/
+            /*box-shadow: 0 0 10px #719ECE;*/
+        /*}*/
+        .btnlogin {
+            font-family: Facit-Light,Arial!important;
+            background-color: #8ca900;
+            /*border-color: #779000;*/
+            color: #ffffff;
+            text-decoration: none;
+            text-align:right;
         }
     </style>
 </head>
 <body>
     <div class="container-fluid" style="margin-right: 0;">
-        <div class="row loginform">
-            <div class="col-4"></div>
-            <div class="col-4 text-white sideblock" >
-                <h3 class="font-weight-bold my-4 pb-2">Mai Eden</h3>
-                <ul class="text-lg-left list-unstyled ml-4">
-                    <li>
-                        <p>MAI EDEN combines cutting edge analytics with customizable tools, making it the gold standard among the innumerable choices of population health management solutions.</p>
-                    </li>
-                </ul>
-                <hr class="hr-light my-4">
-                <ul class="list-inline text-center list-unstyled">
-                    <li class="list-inline-item">
-                        <a class="p-2 fa-lg tw-ic">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="p-2 fa-lg li-ic">
-                            <i class="fab fa-linkedin-in"> </i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="p-2 fa-lg ins-ic">
-                            <i class="fab fa-instagram"> </i>
-                        </a>
-                    </li>
-                </ul>
+        <table class="loginform" width="100%" border="0">
+
+            <tr valign="top">
+                <td width="120">
+                    <h3 class="ml-4 mt-3">Akr Eden</h3>
+                    <p class="ml-4 mr-2 md-bg" style="color:#b3b3b3!important">Akr Eden combines cutting edge analytics with customizable tools, making it the gold standard among the innumerable choices of population health management solutions.</p>
+                </td>
+
+                <td bgcolor="#eee" width="100" height="200">
+                    <form action="" method="post" id="loginsection">
+                        <div class="form-group row mt-4">
+                            <label for="email_address" class="col-md-4 col-form-label text-md-right">Username</label>
+                            <div class="col-md-8">
+                                <input type="text" id="email_address" name="email-address" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8 ml-3">
+                                <label class="col-form-label text-md-right" style="color: #006f9d">Forgot Your Password?</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-md-right">
+                            <button type="submit" class="btnlogin">
+                                Log In
+                            </button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <!--<div class="row loginform">
+        <div class="col-4"></div>
+        <div class="col-4 text-white sideblock" >
+            <h3 class="font-weight-bold my-4 pb-2">Mai Eden</h3>
+            <ul class="text-lg-left list-unstyled ml-2">
+                <li>
+                    <p>MAI EDEN combines cutting edge analytics with customizable tools, making it the gold standard among the innumerable choices of population health management solutions.</p>
+                </li>
+            </ul>
+            <hr class="hr-light my-2">
+            <ul class="list-inline text-center list-unstyled">
+                <li class="list-inline-item">
+                    <a class="p-2 fa-lg tw-ic">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="p-2 fa-lg li-ic">
+                        <i class="fab fa-linkedin-in"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="p-2 fa-lg ins-ic">
+                        <i class="fab fa-instagram"> </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-4">
+            <h3 class="font-weight-bold dark-grey-text mt-4"><i class="fas fa-envelope pr-2 mr-1"></i>Sign In to Mai Eden:</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <i class="fas fa-user prefix"></i>
+                        <input type="text" id="form-contact-email" class="form-control">
+                        <label for="form-contact-email" class="">Username</label>
+                    </div>
+                </div>
             </div>
-            <div class="col-4">
-                <h3 class="font-weight-bold dark-grey-text mt-4"><i class="fas fa-envelope pr-2 mr-1"></i>Sign In to Mai Eden:</h3>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <i class="fas fa-user prefix"></i>
-                            <input type="text" id="form-contact-email" class="form-control">
-                            <label for="form-contact-email" class="">Username</label>
-                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <i class="fas fa-lock prefix"></i>
+                        <input type="password" id="form-contact-password" class="form-control">
+                        <label for="form-contact-password" class="">Password</label>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <i class="fas fa-lock prefix"></i>
-                            <input type="password" id="form-contact-password" class="form-control">
-                            <label for="form-contact-password" class="">Password</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 text-white signin" type="submit">Sign in</button>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="md-form mb-0">
+                        <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 text-white signin" type="submit">Sign in</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>-->
+
     </div>
 
 
