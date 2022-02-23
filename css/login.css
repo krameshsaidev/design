@@ -1,0 +1,287 @@
+
+.page-layout {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    min-height: 768px;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    width: 290px;
+    height: 60px;
+    display: block;
+    background-image: url(https://krameshsaidev.github.io/prototype1/img/logo.png);
+    background-repeat: no-repeat;
+}
+
+.client-communication-panel {
+    position: absolute;
+    right: 520px;
+    top: 150px;
+    height: 310px;
+    width: 210px;
+    background-color: #5b2c81;
+    border-style: solid;
+    border-color: #e0dfe1;
+    border-width: 1px 0px 1px 1px;
+    border-radius: 3px 0px 0px 3px;
+    color: #ffffff;
+}
+
+    .client-communication-panel .title {
+        margin: 15px 20px 10px 20px;
+        font-family: Facit-Semibold,"Arial Black";
+        font-size: 13px;
+    }
+
+    .client-communication-panel .statistic-group {
+        margin: 10px 20px 10px 20px;
+    }
+
+        .client-communication-panel .statistic-group .label {
+            font-family: Facit-Light,Arial;
+            font-size: 11px;
+            color: #aa96c0;
+        }
+
+    .client-communication-panel p {
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+body.container-fluid * {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    min-width: 1024px;
+    overflow: hidden;
+    margin: 0px;
+    text-align: left;
+}
+
+.client-communication-panel .statistic-group .value {
+    font-family: Facit-Semibold,"Arial Black";
+    font-size: 18px;
+}
+
+.client-communication-panel p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.client-communication-panel .statistic-group .subtext {
+    font-family: Facit-Regular,Arial;
+    font-size: 11px;
+    color: #aa96c0;
+}
+
+.client-communication-panel p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@@media only screen and (min-width: 1100px) .content.client-communication {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0px 3px 3px 0px;
+}
+
+.content.client-communication {
+    height: 310px;
+}
+
+.content {
+    background-color: #ffffff;
+    border-color: #e0dfe1;
+}
+
+.content {
+    position: absolute;
+    right: 100px;
+    top: 150px;
+    height: 264px;
+    width: 420px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+    .content .login-step {
+        padding: 0px 21px;
+    }
+
+        .content .login-step .title {
+            font-family: Facit-Light,Arial;
+            color: #514a79;
+        }
+
+        .content .login-step .title {
+            margin: 12px 0px;
+            font-size: 18px;
+            padding-left: 10px;
+        }
+
+    .content .title-image-container {
+        width: 93px;
+        height: 14px;
+        display: block;
+        /*background-image: url(https://krameshsaidev.github.io/prototype1/img/logo.png; background-repeat: no-repeat);*/
+        color: #5b2c81;
+    }
+
+body {
+    font-family: Tahoma;
+    background-color: #fff;
+    color: #ffcc66;
+}
+
+.content .login-step .input-row:first-child {
+    border-top-width: 1px;
+}
+
+.content .login-step .input-row {
+    border-color: #f0eff1;
+}
+
+.content .login-step .input-row {
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    padding: 5px 0px;
+    width: 100%;
+}
+
+    .content .login-step .input-row label {
+        font-family: Facit-Light,Arial;
+        color: #59575d;
+    }
+
+    .content .login-step .input-row label {
+        width: 30%;
+        padding-left: 10px;
+        padding-top: 5px;
+        font-size: 14px;
+        display: block;
+        float: left;
+    }
+
+label {
+    vertical-align: middle;
+}
+
+.content .login-step .input-row:after, body.html_login_page_sub .content .login-step .input-row:before {
+    content: "";
+    line-height: 0;
+    clear: both;
+    display: table;
+}
+
+.content .login-step .input-row .input-container {
+    width: 70%;
+    padding-right: 10px;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+    .content .login-step .input-row .input-container input {
+        font-family: Facit-Light,Arial;
+        border-color: #c5c4c8;
+    }
+
+    .content .login-step .input-row .input-container input, body.html_login_page_sub .content .login-step .input-row .input-container select {
+        height: 28px;
+        margin: 0px;
+        padding: 3px 5px 4px 5px;
+        border-radius: 3px;
+        vertical-align: baseline;
+        border-width: 1px;
+        border-style: solid;
+        font-size: 14px;
+        width: 100%;
+    }
+
+.content .login-step .login-links {
+    color: #202025;
+}
+
+.content .login-step .login-links {
+    font-size: 12px;
+}
+
+.content .login-step .login-error, body.html_login_page_sub .content .login-step .login-links {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+.content .login-step .login-links a {
+    color: #006f9d;
+}
+
+a {
+    font-family: Facit-Regular,Arial;
+    color: #006f9d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content .login-step .login-links {
+    font-size: 12px;
+}
+
+.content .login-step .loginbutton.client-communication {
+    bottom: 62px;
+}
+
+.content .login-step .loginbutton {
+    font-family: Facit-Light,Arial;
+    background-color: #8ca900;
+    border-color: #779000;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.content .login-step .loginbutton {
+    background-image: none;
+    width: 126px;
+    height: 28px;
+    margin: 0px;
+    padding: 3px 10px 4px 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    font-size: 14px;
+    position: absolute;
+    right: 31px;
+    bottom: 16px;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+input[type='button'], input[type='submit'] {
+    border-width: 0px;
+    border-style: none;
+    padding: 0px;
+    outline: 0;
+    box-shadow: none;
+}
+
+.loginbutton {
+    background-position: -284px -136px;
+    width: 58px;
+    height: 24px;
+}
+
+.content .login-step .client-communication-link {
+    font-size: 13px;
+    position: absolute;
+    bottom: 20px;
+}

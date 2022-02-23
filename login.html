@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
-    <style>
+    <!--<style>
         .loginform {
-            /*margin-top: 100px;*/
             position: absolute;
-            right: 100px;
-            top: 100px;
-            height: 280px;
-            width: 500px;
-            background-color: #5b2c81 !important;
+            right: 520px;
+            top: 150px;
+            height: 310px;
+            width: 210px;
+            background-color: #5b2c81;
             border-style: solid;
-            border-color: #e0dfe1!important;
+            border-color: #e0dfe1;
             border-width: 1px 0px 1px 1px;
             border-radius: 3px 0px 0px 3px;
             color: #ffffff;
@@ -45,36 +45,52 @@
         #loginsection {
         color:black;
         }
-        .col-form-label {        
+        .col-form-label {
         padding-top:0;
 
         }
-        /*input:focus {
-            outline: none !important;
-            border: 1px solid blue!important;*/
-            /*box-shadow: 0 0 10px #719ECE;*/
-        /*}*/
         .btnlogin {
             font-family: Facit-Light,Arial!important;
-            background-color: #8ca900;
-            /*border-color: #779000;*/
+            background-color: #8ca900!important;
             color: #ffffff;
             text-decoration: none;
             text-align:right;
         }
-    </style>
+        input {
+        border-radius:4px;
+        height:30px;
+        }
+        .aligntd {
+        width:50px
+        }
+
+        .secondtd {
+            position: absolute;
+            right: 100px;
+            top: 150px;
+            height: 310px;
+            width: 420px;
+            background-color: #fff;
+            border-style: solid;
+            border-color: #e0dfe1;
+            border-width: 1px 0px 1px 1px;
+            border-radius: 3px 0px 0px 3px;
+            color: #ffcc66;
+        }
+    </style>-->
+
 </head>
 <body>
     <div class="container-fluid" style="margin-right: 0;">
-        <table class="loginform" width="100%" border="0">
+        <!--<table class="loginform" width="100%" border="0">
 
             <tr valign="top">
-                <td width="120">
-                    <h3 class="ml-4 mt-3">Akr Eden</h3>
-                    <p class="ml-4 mr-2 md-bg" style="color:#b3b3b3!important">Akr Eden combines cutting edge analytics with customizable tools, making it the gold standard among the innumerable choices of population health management solutions.</p>
+                <td class=" loginform">
+                    <h3 class="mt-3">Akr Eden</h3>
+                    <p style="color:#b3b3b3!important">Akr Eden combines cutting edge analytics with customizable tools, making it the gold standard among the innumerable choices of population health management solutions.</p>
                 </td>
 
-                <td bgcolor="#eee" width="100" height="200">
+                <td class="secondtd" width="100" height="200">
                     <form action="" method="post" id="loginsection">
                         <div class="form-group row mt-4">
                             <label for="email_address" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -96,72 +112,66 @@
                         </div>
 
                         <div class="col-md-12 text-md-right">
-                            <button type="submit" class="btnlogin">
+                            <button type="submit" class="btn btn-success btnlogin" style=" font-family: Slack-Lato, appleLogo, sans-serif; font-size: 10px; border: none; border-radius: 4px; padding-top: 7px; padding-bottom: 7px;">
                                 Log In
                             </button>
                         </div>
                     </form>
                 </td>
             </tr>
-        </table>
-        <!--<div class="row loginform">
-        <div class="col-4"></div>
-        <div class="col-4 text-white sideblock" >
-            <h3 class="font-weight-bold my-4 pb-2">Mai Eden</h3>
-            <ul class="text-lg-left list-unstyled ml-2">
-                <li>
-                    <p>MAI EDEN combines cutting edge analytics with customizable tools, making it the gold standard among the innumerable choices of population health management solutions.</p>
-                </li>
-            </ul>
-            <hr class="hr-light my-2">
-            <ul class="list-inline text-center list-unstyled">
-                <li class="list-inline-item">
-                    <a class="p-2 fa-lg tw-ic">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="p-2 fa-lg li-ic">
-                        <i class="fab fa-linkedin-in"> </i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="p-2 fa-lg ins-ic">
-                        <i class="fab fa-instagram"> </i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-4">
-            <h3 class="font-weight-bold dark-grey-text mt-4"><i class="fas fa-envelope pr-2 mr-1"></i>Sign In to Mai Eden:</h3>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="md-form mb-0">
-                        <i class="fas fa-user prefix"></i>
-                        <input type="text" id="form-contact-email" class="form-control">
-                        <label for="form-contact-email" class="">Username</label>
-                    </div>
+        </table>-->
+        <div class="page-layout">
+            <div class="logo-container"></div>
+            <div class="client-communication-panel">
+                <div class="title">
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="statistic-group">
+                    <p class="label"></p>
+                    <p class="value">153,000,000+</p>
+                    <p class="subtext">Claim Records</p>
+                </div>
+                <div class="statistic-group">
+                    <p class="label"></p>
+                    <p class="value">110</p>
+                    <p class="subtext">Specialties Served</p>
+                </div>
+                <div class="statistic-group">
+                    <p class="label"></p>
+                    <p class="value">1</p>
+                    <p class="subtext">Thriving Healthcare Ecosystem</p>
+                </div>
+                <div class="statistic-group">
+                    <p class="label"></p>
+                    <p class="value">Welcome to Akr Eden.</p>
+                    <p class="subtext"></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="md-form mb-0">
-                        <i class="fas fa-lock prefix"></i>
-                        <input type="password" id="form-contact-password" class="form-control">
-                        <label for="form-contact-password" class="">Password</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="md-form mb-0">
-                        <button class="btn  btn-rounded btn-block my-4 waves-effect z-depth-0 text-white signin" type="submit">Sign in</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
+            <div class="content    client-communication">
+                <div class="login-step">
+                    <div class="title"><div class="title-image-container">Eden</div></div>
+                    <div class="input-rows">
 
+                        <div class="input-row">
+                            <label for="USERNAME">Username</label>
+                            <span class="input-container"><input autocomplete="off" class="focus" id="USERNAME" name="USERNAME" onblur="this.value=this.value.toLowerCase()"></span>
+                        </div>
+                        <div class="input-row">
+                            <label for="PASSWORD">Password</label>
+                            <span class="input-container"><input autocomplete="off" class="focus" id="PASSWORD" name="PASSWORD" onkeypress="DetectCapsLock()" type="PASSWORD"></span>
+                        </div>
+                    </div>
+                    <div class="login-links">
+                        <a class="forgotpassword" href="/resetpassword.esp?LOGINURL=">Forgot password?</a> <span class="configurebrowser">|</span> <a class="configurebrowser" href="#" onclick="return OpenConfigureBrowserDialog()">Configure browser</a>
+                    </div>
+                    <input class="loginbutton  client-communication" id="loginbutton" type="submit" value="Log In">
+                    <div class="client-communication-link">
+                        <a href="https://landing.athenahealth.com/yournetwork" target="_blank">We learn from every new provider who joins the ecosystem. Introduce us to a colleague. &gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
