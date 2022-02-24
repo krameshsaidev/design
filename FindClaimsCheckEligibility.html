@@ -51,19 +51,21 @@
             font-family: Slack-Lato, appleLogo, sans-serif;
             font-size: 11.75px;
             color: rgb(78,45,130);
-            font-weight:600;
-            
+            font-weight: 600;
         }
 
             #mainlayout h5, .divsection {
-            font-size:15.75px;
+                font-size: 15.75px;
             }
+
         .form-control {
-        height:25px;
+            height: 25px;
         }
+
         select.form-control {
             font-size: 10px !important;
         }
+
         .btnsearch {
             background-color: #8ca900 !important;
             font-family: Slack-Lato, appleLogo, sans-serif;
@@ -73,6 +75,7 @@
             padding-top: 7px;
             padding-bottom: 7px;
         }
+
         .btnclear, .btnsavetasks {
             background-color: rgb(78,45,130) !important;
             font-family: Slack-Lato, appleLogo, sans-serif;
@@ -81,8 +84,17 @@
             border-radius: 4px;
             padding-top: 7px;
             padding-bottom: 7px;
-            color:#fff;
+            color: #fff;
         }
+
+        .accordion .row {
+            margin-left: 0;
+        }
+
+        /*.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+        padding-left:0!important;
+        padding-right:2px!important;
+        }*/
     </style>
 
 </head>
@@ -190,52 +202,84 @@
                 <div class="col-md-6">Advanced Search</div>
                 <div class="col-md-6" align="right"><u>Go to Simple Search</u></div>
             </div>
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="ch_trace_id">CH TRACE ID :</label>
-                    <input type="text" class="form-control" id="ch_trace_id">
+            <div class="row mt-1">
+                <div class="col-md-3 row">
+                    <div class="col-md-5">
+                        <label for="ch_trace_id">CH TRACE ID :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" id="ch_trace_id">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="claim_type" class="ml-2">Claim Type :</label>
-                    <select class="form-control" id="claim_type">
-                        <option>All</option>
-                    </select>
+                <div class="col-md-3 row">
+                    <div class="col-md-4 p-0">
+                        <label for="claim_type">Claim Type :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <select class="form-control" id="claim_type">
+                            <option>All</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="processed_as" class="ml-2">Processed As:</label>
-                    <select class="form-control" id="processed_as">
-                        <option>All</option>
-                    </select>
+                <div class="col-md-2 row p-0">
+                    <div class="col-md-6 p-0">
+                        <label for="processed_as">Processed As:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control" id="processed_as">
+                            <option>All</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="charge_amount" class="ml-2">Charge Amount :</label>
-                    <select class="form-control" id="charge_amount">
-                        <option>All</option>
-                    </select>
-                    <input type="text" class="form-control" />
+                <div class="col-md-4 row p-0">
+                    <div class="col-md-4">
+                        <label for="charge_amount">Charge Amount :</label>
+                    </div>
+                    <div class="col-md-2 p-0">
+                        <select class="form-control" id="charge_amount">
+                            <option>All</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" />
+                    </div>
                 </div>
-            </form>
-            <form class="form-inline mt-1">
-                <div class="form-group">
-                    <label for="ch_reject_msg">CH Reject Message:</label>
-                    <input type="text" class="form-control" id="ch_reject_msg">
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-3 row">
+                    <div class="col-md-6 pr-0">
+                        <label for="ch_reject_msg">CH Reject Message:</label>
+                    </div>
+                    <div class="col-md-6 pl-0">
+                        <input type="text" class="form-control" id="ch_reject_msg">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="payer_reject_msg" class="ml-2">Payer Reject Message:</label>
-                    <input type="text" class="form-control" id="payer_reject_msg">
+                <div class="col-md-3 row p-0">
+                    <div class="col-md-5">
+                        <label for="payer_reject_msg" class="ml-2">Payer Reject Message:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="payer_reject_msg">
+                    </div>
                 </div>
-                <div class="col-4">
-                    <label for="error_loop" class="mr-5">CH Reject Message by ANSI Loop/Segment:</label>
-                    <select class="form-control" id="error_loop">
-                        <option>No Error Loop</option>
-                    </select>
-                    <select class="form-control" id="error_segment">
-                        <option>No Error Segment</option>
-                    </select>
+                <div class="col-md-6 row">
+                    <div class="col-md-4 pr-0">
+                        <label for="error_loop" class="mr-5">CH Reject Message by ANSI Loop/Segment:</label>
+                    </div>
+                    <div class="col-md-3 pl-0">
+                        <select class="form-control" id="error_loop">
+                            <option>No Error Loop</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 pl-0">
+                        <select class="form-control" id="error_segment">
+                            <option>No Error Segment</option>
+                        </select>
+                    </div>
                 </div>
-            </form>
+            </div>
             <!--Accordion wrapper-->
-            <div class="accordion md-accordion mr-3 ml-1" id="accordion1" role="tablist" aria-multiselectable="true">
+            <div class="accordion md-accordion mr-3 ml-1 mt-2" id="accordion1" role="tablist" aria-multiselectable="true">
 
                 <!-- Accordion card -->
                 <div class="card">
@@ -254,7 +298,53 @@
                     <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                          data-parent="#accordion1">
                         <div class="card-body">
-                            <form class="form-inline mt-1">
+                            <div class="row">
+                                <div class="col-md-2 row">
+                                    <label for="account">Account : </label>
+                                    <label id="account">95625408</label>
+                                </div>
+                                <div class="col-md-4 row">
+                                    <div class="col-md-5"><label for="my_list">Payer Name or ID:<input type="checkbox" id="my_list" /> My List <i class="fas fa-question-circle"></i> (<u>Payer List</u>)</label></div>
+                                    <div class="col-md-7"><input type="text" id="payer_search" class="form-control" title="Search and select payer" placeholder="Search and select payer" /></div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 p-0"><label for="other_payers">Other Payers:</label></div>
+                                    <div class="col-md-8">
+                                        <select class="form-control" id="other_payers">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 p-0"><label for="billing_provider_tax_id">Billing Provider Tax ID : </label></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" id="billing_provider_tax_id"></div>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 p-0"><label for="billing_provider_npi">Billing Provider NPI :</label></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" id="billing_provider_npi"></div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-3 p-0"><label for="custom_id">Custom ID:</label></div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="custom_id">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-5 p-0"><label for="rendering_prov_id">Rendering Prov ID :</label></div>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="rendering_prov_id">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 p-0"><label for="rendering_prov_npi">Rendering Prov NPI :</label></div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="rendering_prov_npi">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<form class="form-inline mt-1">
                                 <div class="form-group">
                                     <label for="account">Account : </label>
                                     <label id="account">95625408</label>
@@ -269,8 +359,8 @@
                                         <option>All</option>
                                     </select>
                                 </div>
-                            </form>
-                            <form class="form-inline mt-1">
+                            </form>-->
+                            <!--<form class="form-inline mt-1">
                                 <div class="form-group">
                                     <label for="billing_provider_tax_id">Billing Provider Tax ID :</label>
                                     <input type="text" class="form-control" id="billing_provider_tax_id">
@@ -293,7 +383,7 @@
                                     <label for="rendering_prov_npi" class="ml-2">Rendering Prov NPI :</label>
                                     <input type="text" class="form-control" id="rendering_prov_npi">
                                 </div>
-                            </form>
+                            </form>-->
                         </div>
                     </div>
 
@@ -321,103 +411,168 @@
                     <div id="collapseOne2" class="collapse show" role="tabpanel" aria-labelledby="headingOne2"
                          data-parent="#accordion2">
                         <div class="card-body">
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="ch_claim_processing_status">Ch Claim Processing Status : </label>
-                                    <select class="form-control" id="ch_claim_processing_status">
-                                        <option>All</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="ch_claim_processing_date_range" class="ml-2">Ch Claim Processing Date Range : </label>
-                                    <select class="form-control" id="ch_claim_processing_date_previous">
-                                        <option>Previous</option>
-                                    </select>
-                                    <select class="form-control" id="ch_claim_processing_date_date">
-                                        <option>3</option>
-                                    </select>
-                                    <select class="form-control" id="ch_claim_processing_date_day">
-                                        <option>Day(s)</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="cci_status" class="ml-2">CCI Status:</label>
-                                    <select class="form-control" id="cci_status">
-                                        <option>All</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="payer_processing_status">Payer Processing Status : </label>
-                                    <select class="form-control" id="payer_processing_status">
-                                        <option>All</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="payer_processing_date_range" class="ml-2">Payer Processing Date Range : </label>
-                                    <select class="form-control" id="payer_processing_date_previous">
-                                        <option>Select</option>
-                                    </select>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mnc_status" class="ml-2">MNC Status:</label>
-                                    <select class="form-control" id="mnc_status">
-                                        <option>All</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="remit_status">Remit Status : </label>
-                                    <select class="form-control" id="remit_status">
-                                        <option>All</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="era_processing_date_previous" class="ml-2">ERA Processing Date Range : </label>
-                                    <select class="form-control" id="era_processing_date_previous">
-                                        <option>Select</option>
-                                    </select>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                </div>
-                                <div class="form-group">
-                                    <label for="denial_prevention_status" class="ml-2">Denial Prevention Status:</label>
-                                    <select class="form-control" id="denial_prevention_status">
-                                        <option>All</option>
-                                    </select>
-                                </div>
-                            </form>
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="auto_eligibility_processing_status">Auto Eligibility Processing Status : </label>
-                                    <select class="form-control" id="auto_eligibility_processing_status">
-                                        <option>Inactive, Valid'n Msgs</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="auto_elig_processing_date_range" class="ml-2">Auto Elig Processing Date Range : </label>
-                                    <select class="form-control" id="auto_elig_processing_date_previous">
-                                        <option>Select</option>
-                                    </select>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                </div>
-                                <div class="form-group">
-                                    <label for="denial_prevention_category" class="ml-2">Denial Prevention Category:</label>
-                                    <select class="form-control" id="denial_prevention_category">
-                                        <option>Select</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
 
+                            <div class="row">
+                                <div class="col-md-3 row ">
+                                    <div class="col-md-7 pl-0"><label for="billing_provider_npi">Ch Claim Processing Status :</label></div>
+                                    <div class="col-md-5 pl-0">
+                                        <select class="form-control" id="ch_claim_processing_date_previous">
+                                            <option>Previous</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 row">
+                                    <div class="col-md-4 pl-0"><label for="custom_id">Ch Claim Processing Date Range:</label></div>
+                                    <div class="col-md-3 pl-0">
+                                        <select class="form-control" id="ch_claim_processing_date_previous">
+                                            <option>Previous</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 pl-0">
+                                        <select class="form-control" id="ch_claim_processing_date_date">
+                                            <option>3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 pl-0">
+                                        <select class="form-control" id="ch_claim_processing_date_day">
+                                            <option>Day(s)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 p-0"><label for="cci_status" class="ml-2">CCI Status:</label></div>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="cci_status">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="payer_processing_status">Payer Processing Status : </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="payer_processing_status">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 row">
+                                    <div class="col-md-3 pl-0">
+                                        <label for="payer_processing_date_range">Payer Processing Date Range : </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="payer_processing_date_previous">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row ">
+                                    <div class="col-md-4 p-0">
+                                        <label for="mnc_status" class="ml-2">MNC Status:</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="mnc_status">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="remit_status">Remit Status : </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="remit_status">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 row">
+                                    <div class="col-md-3 pl-0">
+                                        <label for="era_processing_date_previous">ERA Processing Date Range : </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="era_processing_date_previous">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row ">
+                                    <div class="col-md-4 p-0">
+                                        <label for="denial_prevention_status" class="ml-2">Denial Prevention Status:</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="denial_prevention_status">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="auto_eligibility_processing_status">Auto Eligibility Processing Status : </label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control p-0" style="width:125px;" id="auto_eligibility_processing_status">
+                                            <option>Inactive, Valid'n Msgs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 row">
+                                    <div class="col-md-3 pl-0">
+                                        <label for="auto_elig_processing_date_range">Auto Elig Processing Date Range : </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-control" id="auto_elig_processing_date_previous">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 row ">
+                                    <div class="col-md-4 p-0">
+                                        <label for="denial_prevention_category" class="ml-2">Denial Prevention Category:</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="denial_prevention_category">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Accordion card -->
                 </div>
-                <!-- Accordion card -->
             </div>
             <!-- Accordion wrapper -->
             <!--Accordion wrapper-->
@@ -440,24 +595,40 @@
                     <div id="collapseOne3" class="collapse show" role="tabpanel" aria-labelledby="headingOne3"
                          data-parent="#accordion3">
                         <div class="card-body">
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="insured_id">Insured ID :</label>
-                                    <input type="text" class="form-control" id="insured_id">
+                            <div class="row">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 pl-0">
+                                        <label for="insured_id">Insured ID :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="insured_id">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="patient_account" class="ml-2">Patient Account # :</label>
-                                    <input type="text" class="form-control" id="patient_account">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 pl-0">
+                                        <label for="patient_account">Patient Account # :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="patient_account">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="patient_last_name" class="ml-2">Patient Last name:</label>
-                                    <input type="text" class="form-control" id="patient_last_name">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 pl-0">
+                                        <label for="patient_last_name">Patient Last name:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="patient_last_name">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="patient_first_name" class="ml-2">Patient First name:</label>
-                                    <input type="text" class="form-control" id="patient_first_name">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-4 pl-0">
+                                        <label for="patient_first_name">Patient First name:</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" id="patient_first_name">
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -485,28 +656,52 @@
                     <div id="collapseOne4" class="collapse show" role="tabpanel" aria-labelledby="headingOne4"
                          data-parent="#accordion4">
                         <div class="card-body">
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="date_of_service">Date of Service :</label>
-                                    <select class="form-control" id="date_of_service">
-                                        <option>Select</option>
-                                    </select>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                            <div class="row">
+                                <div class="col-md-6 row">
+                                    <div class="col-md-3 pl-0">
+                                        <label for="date_of_service">Date of Service :</label>
+                                    </div>
+                                    <div class="col-md-3 pl-1">
+                                        <select class="form-control" id="date_of_service">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="diagnosis_code" class="ml-2">Diagnosis Code :</label>
-                                    <input type="text" class="form-control" id="diagnosis_code">
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="diagnosis_code" class="ml-2">Diagnosis Code :</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="diagnosis_code">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="procedure_code" class="ml-2">Procedure Code :</label>
-                                    <input type="text" class="form-control" id="procedure_code">
+                                <div class="col-md-3 row ">
+                                    <div class="col-md-4 p-0">
+                                        <label for="procedure_code" class="ml-2">Procedure Code :</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="procedure_code">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="proc_code_modifier" class="ml-2">Proc Code Modifier :</label>
-                                    <input type="text" class="form-control" id="proc_code_modifier">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 row pl-2">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="proc_code_modifier" class="ml-2">Proc Code Modifier :</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="proc_code_modifier">
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -534,41 +729,70 @@
                     <div id="collapseOne5" class="collapse show" role="tabpanel" aria-labelledby="headingOne5"
                          data-parent="#accordion5">
                         <div class="card-body">
-                            <form class="form-inline mt-1">
-                                <div class="form-group">
-                                    <label for="claim_work_status">Claim Work Status :</label>
-                                    <select class="form-control" id="claim_work_status">
-                                        <option>Select</option>
-                                    </select>
+                            <div class="row">
+                                <div class="col-md-3 row pl-2">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="claim_work_status">Claim Work Status :</label>
+                                    </div>
+                                    <div class="col-md-6 p-0">
+                                        <select class="form-control" id="date_of_service">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="trouble_ticket_status" class="ml-2">Trouble Ticket Status:</label>
-                                    <select class="form-control" id="trouble_ticket_status">
-                                        <option>Select</option>
-                                    </select>
+                                <div class="col-md-3 row">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="trouble_ticket_status">Trouble Ticket Status:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="trouble_ticket_status">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="assignee" class="ml-2">Assignee :</label>
-                                    <select class="form-control" id="assignee">
-                                        <option>Select</option>
-                                    </select>
+                                <div class="col-md-3 row ">
+                                    <div class="col-md-4 p-0">
+                                        <label for="assignee">Assignee :</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="assignee">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="claim_origin" class="ml-2">Claim Origin :</label>
-                                    <select class="form-control" id="claim_origin">
-                                        <option>Select</option>
-                                    </select>
+                                <div class="col-md-3 row pl-2">
+                                    <div class="col-md-6 pl-0">
+                                        <label for="claim_origin">Claim Origin :</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" id="claim_origin">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
                                 </div>
-
-                                <div class="form-group mt-2">
-                                    <label for="last_client_status_date">Last Client Status Date:</label>
-                                    <select class="form-control" id="last_client_status_date">
-                                        <option>Select</option>
-                                    </select>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
-                                    <input type="text" class="form-control" /> <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <div class="row mt-2">
+                                
+                                <div class="col-md-6 row pl-2">
+                                    <div class="col-md-3 pl-0">
+                                        <label for="last_client_status_date">Last Client Status Date:</label>
+                                    </div>
+                                    <div class="col-md-3 pl-0">
+                                        <select class="form-control" id="last_client_status_date">
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
+                                    <div class="col-md-3 pl-0 row">
+                                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
+                            
                         </div>
                     </div>
 
@@ -596,7 +820,7 @@
                     <div class="form-group">
                         <button class="btn btn-success btnsearch">Search</button>
                         <button class="btn btnclear">Clear Fields</button>
-                        <button class="btn btnsavetasks">Save To My Tasks</button>    
+                        <button class="btn btnsavetasks">Save To My Tasks</button>
                     </div>
                 </form>
             </div>
@@ -611,15 +835,7 @@
     <script type="text/javascript" src="js/sidenav.js"></script>
 
     <script>
-        //function toggleIcon(e) {
-        //    $(e.target)
-        //        .prev('.panel-heading')
-        //        .find(".more-less")
-        //        .toggleClass('glyphicon-plus glyphicon-minus');
-        //}
-        //$('.panel-group').on('hidden.bs.collapse', toggleIcon);
-        //$('.panel-group').on('shown.bs.collapse', toggleIcon);
-        //$('#accordion .collapse').collapse('show');
+
     </script>
 </body>
 </html>
