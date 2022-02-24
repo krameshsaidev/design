@@ -1,0 +1,326 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 2</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <style>
+        #printsection i, .input-prefix {
+            font-size: 22px;
+            padding-left: 5px;
+        }
+
+            #printsection i:last-child {
+                padding-right: 15px;
+            }
+
+        .md-form {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .divsection {
+            background-color: lightgrey !important;
+        }
+
+        .md-form.md-bg input[type="text"], .md-form.md-bg input[type="text"]:focus {
+            background-color: #fff;
+        }
+        .bc-icons-2 .breadcrumb-item + .breadcrumb-item::before {
+            content: none;
+        }
+
+        .bc-icons-2 .breadcrumb-item.active {
+            color: #455a64;
+        }
+    </style>
+</head>
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu"
+             class="collapse d-lg-block sidebar collapse">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-2" id="menulist">
+
+
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar"
+             class="navbar navbar-expand-lg navbar-light text-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#sidebarMenu"
+                        aria-controls="sidebarMenu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand text-white" href="#">
+                    Mai Eden
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Patient Access</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Claims And Tracking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rejections And Denials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Payments And Billing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reporting And Metrics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools And Setup</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Icon -->
+                    <li class="nav-item">
+                        <a class="nav-link me-3 me-lg-0" href="#">
+                            <i class="fas fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <!-- Icon -->
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <!-- Icon dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+                           href="#"
+                           id="navbarDropdown"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <i class="united kingdom flag m-0"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="united kingdom flag"></i>English
+                                    <i class="fa fa-check text-success ms-2"></i>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
+                                 class="rounded-circle"
+                                 height="22"
+                                 alt=""
+                                 loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+    <!--Main layout-->
+    <main style="margin-top: 58px">
+        <!--<div class="bc-icons-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb    lighten-4">
+                    <li class="breadcrumb-item">
+                        <a class="black-text" href="#">Claims And Tracking</a><i class="fas fa-caret-right mx-2 mt-1" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="black-text" href="#">Submit Claims</a><i class="fas fa-caret-right mx-2 mt-1" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item active">Create New Claim</li>
+                </ol>
+            </nav>
+        </div>-->
+        <div class="container-fluid" id="mainlayout">
+            <div class="row" style="margin-top:-25px;float:right" id="printsection">
+                <i class="fas fa-question-circle"></i>
+                <i class="fas fa-print"></i>
+            </div>
+            <div class="row divsection mt-4">
+                <div class="col-md-6">Simple Search</div>
+                <div class="col-md-6" align="right"><u>Go to Advanced Search</u></div>
+            </div>
+            <!-- Extended material form grid -->
+            <form class="mt-2">
+                <!-- Grid row -->
+                <div class="form-row">
+                    <!-- Grid column -->
+                    <div class="col-md-6">
+                        <!-- Material input -->
+                        <div class="md-form form-group">
+                            <input type="email" class="form-control" id="inputEmail4MD" placeholder="Email">
+                            <label for="inputEmail4MD">Email</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-6">
+                        <!-- Material input -->
+                        <div class="md-form form-group">
+                            <input type="password" class="form-control" id="inputPassword4MD" placeholder="Password">
+                            <label for="inputPassword4MD">Password</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-12">
+                        <!-- Material input -->
+                        <div class="md-form form-group">
+                            <input type="text" class="form-control" id="inputAddressMD" placeholder="1234 Main St">
+                            <label for="inputAddressMD">Address</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-12">
+                        <!-- Material input -->
+                        <div class="md-form form-group">
+                            <input type="text" class="form-control" id="inputAddress2MD" placeholder="Apartment, studio, or floor">
+                            <label for="inputAddress2MD">Address 2</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Grid row -->
+                <div class="form-row">
+                    <!-- Grid column -->
+                    <div class="col-md-6">
+                        <!-- Material input -->
+                        <div class="md-form form-group">
+                            <input type="text" class="form-control" id="inputCityMD" placeholder="New York City">
+                            <label for="inputCityMD">City</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-6">
+                        <!-- Material input -->
+                        <div class="md-form form-group">
+                            <input type="text" class="form-control" id="inputZipMD" placeholder="11206-1117">
+                            <label for="inputZipMD">Zip</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <button type="submit" class="btn btn-primary btn-md">Sign in</button>
+            </form>
+            <!-- Extended material form grid -->
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/sidenav.js"></script>
+
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Claims</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <style>
+        #printsection i, .input-prefix {
+            font-size: 22px;
+            padding-left: 5px;
+        }
+
+            #printsection i:last-child {
+                padding-right: 15px;
+            }
+
+        .md-form {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .divsection, .row {
+            /*background-color: lightgrey !important;*/
+            margin-right: 0 !important;
+        }
+
+        .md-form.md-bg input[type="text"], .md-form.md-bg input[type="text"]:focus {
+            background-color: #fff;
+        }
+
+        .bc-icons-2 .breadcrumb-item + .breadcrumb-item::before {
+            content: none;
+        }
+
+        .bc-icons-2 .breadcrumb-item.active {
+            color: #455a64;
+        }
+
+        .form-inline .form-control {
+            margin-left: 5px;
+        }
+
+        #mainlayout, #mainlayout a {
+            font-family: Slack-Lato, appleLogo, sans-serif;
+            font-size: 11.75px;
+            color: rgb(78,45,130);
+            font-weight: 600;
+        }
+
+            #mainlayout h5, .divsection {
+                font-size: 15.75px;
+            }
+
+        .form-control {
+            height: 25px;
+        }
+
+        select.form-control {
+            font-size: 10px !important;
+        }
+
+        .btnsearch {
+            background-color: #8ca900 !important;
+            font-family: Slack-Lato, appleLogo, sans-serif;
+            font-size: 10px;
+            border: none;
+            border-radius: 4px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        .btnclear, .btnsavetasks {
+            background-color: rgb(78,45,130) !important;
+            font-family: Slack-Lato, appleLogo, sans-serif;
+            font-size: 10px;
+            border: none;
+            border-radius: 4px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            color: #fff;
+        }
+
+        .accordion .row {
+            margin-left: 0;
+        }
+
+        /*.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+        padding-left:0!important;
+        padding-right:2px!important;
+        }*/
+    </style>
+
+</head>
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu"
+             class="collapse d-lg-block sidebar collapse">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-2" id="menulist">
+
+
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar -->
+        <nav id="main-navbar"
+             class="navbar navbar-expand-lg navbar-light text-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#sidebarMenu"
+                        aria-controls="sidebarMenu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand text-white" href="#">
+                    Akr Eden
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Patient Access</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Claims &<br />Tracking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rejections &<br />Denials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Payments &<br />Billing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Reporting &<br />Metrics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools &<br />Setup</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <img src="images/doctor.png"
+                                 class="rounded-circle"
+                                 height="22"
+                                 alt=""
+                                 loading="lazy" />
+                            Hi User
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+    <!--Main layout-->
+    <main style="margin-top: 80px">
+        <div class="container-fluid" id="mainlayout">
+            <div class="row" style="margin-top:-25px;float:right" id="printsection">
+                <i class="fas fa-question-circle"></i>
+                <i class="fas fa-print"></i>
+            </div>
+            <div class="row divsection mt-4">
+                <div class="col-md-6">Simple Search</div>
+                <div class="col-md-6" align="right"><u>Go to Advanced Search</u></div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-2">
+                    <label for="ch_trace_id">CH TRACE ID :</label>
+                    <input type="text" class="form-control" id="ch_trace_id">
+                </div>
+                <div class="col-md-1">
+                    <label for="account">Account : </label>
+                    <label id="account">95625408</label>
+                </div>
+                <div class="col-md-2">
+                    Billing Provider Tax ID :
+                    <input type="text" class="form-control" id="billing_provider_tax_id">
+                </div>
+                <div class="col-md-2">
+                    <label for="billing_provider_npi" style="margin-bottom:0">Billing Provider NPI :</label>
+                    <input type="text" class="form-control" id="billing_provider_npi">
+                </div>
+                <div class="col-md-5 row">
+                    <div class="col-md-4"><label for="custom_id">Ch Claim Processing Date Range:</label></div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="ch_claim_processing_date_previous">
+                            <option>Previous</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 pl-0">
+                        <select class="form-control" id="ch_claim_processing_date_date">
+                            <option>3</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 pl-0">
+                        <select class="form-control" id="ch_claim_processing_date_day">
+                            <option>Day(s)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6 row">
+                        <div class="col-md-6">
+                        <label for="my_list">Payer Name or ID:<input type="checkbox" id="my_list" /> My List <i class="fas fa-question-circle"></i> (<u>Payer List</u>)</label>
+                        </div>
+                        <div class="col-md-6">
+                        <input type="text" id="payer_search" class="form-control" title="Search and select payer" placeholder="Search and select payer" />
+                        </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6 row">
+                    <div class="col-md-3">
+                        <label for="date_of_service">Date of Service :</label>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="date_of_service">
+                            <option>Select</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 row">
+                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                    </div>
+                    <div class="col-md-3 row">
+                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
+                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Insured ID :
+                    <input type="text" class="form-control" id="insured_id">
+                </div>
+                <div class="col-md-2">
+                    Patient Account # :
+                    <input type="text" class="form-control" id="insured_id">
+                </div>
+                <div class="col-md-2">
+                    Patient Last Name :
+                    <input type="text" class="form-control" id="patient_last_name">
+                </div>
+                <div class="col-md-2">
+                    Patient First Name :
+                    <input type="text" class="form-control" id="patient_first_name">
+                </div>
+                <div class="col-md-2">
+                    <label for="ch_claim_processing_status" style="margin-bottom:0">Ch Claim Processing Status :</label>
+                    <select class="form-control" id="ch_claim_processing_status">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="claim_type" style="margin-bottom:0">Claim Type :</label>
+                    <select class="form-control" id="claim_type">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="col-md-2 pl-0">
+                    <label for="payer_processing_status" style="margin-bottom:0">Payer Processing Status :</label>
+                    <select class="form-control" id="payer_processing_status">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="col-md-2 pl-0">
+                    <label for="remit_status" style="margin-bottom:0">Remit Status :</label>
+                    <select class="form-control" id="remit_status">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="col-md-2 pl-0">
+                    <label for="claim_workflow_status" style="margin-bottom:0">Claim Workflow Status :</label>
+                    <select class="form-control" id="claim_workflow_status">
+                        <option>Select</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row divsection mr-2" style="float:right">
+                <form class="form-inline ml-4">
+                    <div class="form-group">
+                        <label for="claims_per_page">Claims Per Page :</label>
+                        <select class="form-control" id="claims_per_page">
+                            <option>10  </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="claims_per_page">Sort By :</label>
+                        <select class="form-control" id="claims_per_page">
+                            <option>Date Processed  </option>
+                        </select>
+                        <select class="form-control" id="claims_per_page">
+                            <option>Assending  </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btnsearch">Search</button>
+                        <button class="btn btnclear">Clear Fields</button>
+                        <button class="btn btnsavetasks">Save To My Tasks</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/sidenav.js"></script>
+
+    <script>
+
+    </script>
+</body>
+</html>
