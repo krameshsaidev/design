@@ -5,6 +5,7 @@
     height: 100%;
     min-height: 768px;
     position: relative;
+    background-color: #e6e6e6 !important;
 }
 
 .logo-container {
@@ -14,8 +15,9 @@
     width: 290px;
     height: 60px;
     display: block;
-    background-image: url(https://krameshsaidev.github.io/prototype1/img/logo.png);
+    /*background-image: url(https://krameshsaidev.github.io/prototype1/img/logo.png);*/
     background-repeat: no-repeat;
+    
 }
 
 .client-communication-panel {
