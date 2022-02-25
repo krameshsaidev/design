@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Secondary Claim</title>
+    <title>Review Claim Workspace</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -197,55 +197,74 @@
                 <i class="fas fa-question-circle"></i>
                 <i class="fas fa-print"></i>
             </div>
-            <div class="row divsection mt-4">
-                <div class="col-md-6">Simple Search</div>
-                <div class="col-md-6" align="right"><u>Go to Advanced Search</u></div>
-            </div>
+            
             <div class="row mt-1">
                 <div class="col-md-2">
-                    <label for="ch_trace_id">CH TRACE ID :</label>
-                    <input type="text" class="form-control" id="ch_trace_id">
+                    <label for="workspace_id">Workspace ID :</label>
+                    <input type="text" class="form-control" id="workspace_id">
                 </div>
-                <div class="col-md-1">
-                    <label for="account">Account : </label>
-                    <label id="account">95625408</label>
+                <div class="col-md-2">
+                    <label for="claim_origin">Claim Origin : </label>
+                    <select class="form-control" id="claim_origin">
+                        <option>Any</option>
+                    </select>
                 </div>
+                <div class="col-md-2">
+                    <label for="last_action">Last Action : </label>
+                    <select class="form-control" id="last_action">
+                        <option>Any</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="ch_status">CH Status : </label>
+                    <select class="form-control" id="ch_status">
+                        <option>Not Accepted</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="submitter_id">Submitter ID :</label>
+                    <input type="text" class="form-control" id="submitter_id">
+                </div>     
                 <div class="col-md-2">
                     Billing Provider Tax ID :
                     <input type="text" class="form-control" id="billing_provider_tax_id">
                 </div>
-                <div class="col-md-2">
-                    <label for="billing_provider_npi" style="margin-bottom:0">Billing Provider NPI :</label>
-                    <input type="text" class="form-control" id="billing_provider_npi">
-                </div>
-                <div class="col-md-5 row">
-                    <div class="col-md-3 pl-0">
-                        <label for="date_of_service">Ch Claim Processing Date Range :</label>
-                    </div>
-                    <div class="col-md-3 pl-1">
-                        <select class="form-control" id="date_of_service">
-                            <option>Select</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 pl-1 row">
-                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
-                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
-                    </div>
-                    <div class="col-md-3 pl-0 row">
-                        <div class="col-md-10 pl-0 pr-1"><input type="text" class="form-control" /></div>
-                        <div class="col-md-2 pl-0 mt-2"> <i class="far fa-calendar-alt"></i></div>
-                    </div>
-                </div>
-
             </div>
             <div class="row mt-2">
-                <div class="col-md-6 row">
-                    <div class="col-md-6">
-                        <label for="my_list">Payer Name or ID:<input type="checkbox" id="my_list" /> My List <i class="fas fa-question-circle"></i> (<u>Payer List</u>)</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" id="payer_search" class="form-control" title="Search and select payer" placeholder="Search and select payer" />
-                    </div>
+                <div class="col-md-6">
+                    <label for="my_list">Payer Name or ID:<input type="checkbox" id="my_list" /> My List <i class="fas fa-question-circle"></i> (<u>Payer List</u>)</label>
+                    <input type="text" id="payer_search" class="form-control" title="Search and select payer" placeholder="Search and select payer" />
+                </div>
+                <div class="col-md-2">
+                    <label for="billing_provider_npi" >Billing Provider NPI :</label>
+                    <input type="text" class="form-control" id="billing_provider_npi">
+                </div>
+                <div class="col-md-2">
+                    <label for="patient_account">Claim Type :</label>
+                    <select class="form-control" id="claim_type">
+                        <option>All</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="patient_account">Patient Account # :</label>
+                    <input type="text" class="form-control" id="patient_account">
+                </div>
+                
+            </div>
+            <div class="row mt-1">
+
+
+                <div class="col-md-2">
+                    <label for="patient_last_name">Patient Last name:</label>
+                    <input type="text" class="form-control" id="patient_last_name">
+                </div>
+                <div class="col-md-2">
+                    <label for="patient_first_name">Patient First name:</label>
+                    <input type="text" class="form-control" id="patient_first_name">
+                </div>
+                <div class="col-md-2">
+                    <label for="insured_id">Batch ID :</label>
+                    <input type="text" class="form-control" id="insured_id">
                 </div>
                 <div class="col-md-6 row">
                     <div class="col-md-3 pl-0">
@@ -266,49 +285,47 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-1">
-                <div class="col-md-3 ">
-                    <label for="insured_id">Insured ID :</label>
-                    <input type="text" class="form-control" id="insured_id">
+            <div class="row mt-2">
+                <div class="col-md-2">
+                    <label for="date_of_service">Charge Amount :</label>
                 </div>
-                <div class="col-md-3 pl-0">
-                    <label for="patient_account">Patient Account # :</label>
-                    <input type="text" class="form-control" id="patient_account">
+                <div class="col-md-3 row">
+                    <div class="col-md-6">
+                        <select class="form-control" id="date_of_service">
+                            <option>=</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" />
+                    </div>
                 </div>
-                <div class="col-md-3 pl-0">
-                    <label for="patient_last_name">Patient Last name:</label>
-                    <input type="text" class="form-control" id="patient_last_name">
-                </div>
-                <div class="col-md-3 pl-0">
-                    <label for="patient_first_name">Patient First name:</label>
-                    <input type="text" class="form-control" id="patient_first_name">
+                <div class="col-md-5 row">
+                    <div class="col-md-3"><label for="custom_id">Created On:</label></div>
+                    <div class="col-md-3 pl-0">
+                        <select class="form-control" id="ch_claim_processing_date_previous">
+                            <option>Last</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 pl-0">
+                        <select class="form-control" id="ch_claim_processing_date_date">
+                            <option>7</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 pl-0">
+                        <select class="form-control" id="ch_claim_processing_date_day">
+                            <option>Day(s) including today</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-1">
+            <div class="row mt-2">
                 <div class="col-md-2">
-                    <label for="insured_id">CH Claim Processing Status :</label>
-                    ACCEPTED
+                    Assigned To: <input type="checkbox" id="self" /> <label for="self">Self</label>
+                    <input type="text" id="assigned_to" class="form-control" />
                 </div>
                 <div class="col-md-2">
-                    <label for="patient_account">Claim Type :</label>
-                    <select class="form-control" id="claim_type">
-                        <option>All</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="patient_last_name">Payer Processing Status:</label>
-                    <select class="form-control" id="payer_processing_status">
-                        <option>All</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="patient_first_name">Remit Status : Paid</label>
-                </div>
-                <div class="col-md-2">
-                    <label for="patient_first_name">Claim Workflow Status:</label>
-                    <select class="form-control" id="claim_workflow_status">
-                        <option>Select</option>
-                    </select>
+                    <label>Related Claim: </label> 
+                    <input type="text" id="related_claim" class="form-control"/>
                 </div>
             </div>
             <div class="row divsection" style="float:right">
@@ -331,8 +348,10 @@
                     <div class="form-group">
                         <button class="btn btn-success btnsearch">Search</button>
                         <button class="btn btnclear">Clear Fields</button>
+                        <button class="btn btnsavetasks">Save To My Tasks</button>
                     </div>
                 </form>
+            </div>
             </div>
 </main>
     <!--Main layout-->
